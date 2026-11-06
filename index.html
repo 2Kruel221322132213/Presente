@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Fernanda & Kayki</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TELA DE INTRODUÇÃO: ANIMAÇÃO "TUDUM" / LETRA M -->
+  <div id="intro-netflix" class="intro-netflix" onclick="iniciarExperiencia()">
+    <div class="netflix-logo-anim">
+      <div class="arco-coracao"></div>
+      <span class="letra-m">M</span>
+    </div>
+    <p class="clique-para-entrar">Toque em qualquer lugar para dar o Play ▶</p>
+    <audio id="som-netflix" src="audio/Netflix intro.mp3"></audio>
+  </div>
+
+  <!-- TELA DE SELEÇÃO DE PERFIS (T - E - A - M - O) -->
+  <div id="tela-perfis" class="tela-perfis escondido">
+    <h1>Quem está assistindo?</h1>
+    <div class="container-perfis">
+      <div class="perfil" onclick="entrarPerfil()">
+        <div class="avatar-perfil" style="background: linear-gradient(135deg, #e50914, #831010);">T</div>
+        <span>Te</span>
+      </div>
+      <div class="perfil" onclick="entrarPerfil()">
+        <div class="avatar-perfil" style="background: linear-gradient(135deg, #0071eb, #00366d);">E</div>
+        <span>Amo</span>
+      </div>
+      <div class="perfil" onclick="entrarPerfil()">
+        <div class="avatar-perfil" style="background: linear-gradient(135deg, #e5a909, #8c6304);">A</div>
+        <span>Minha</span>
+      </div>
+      <div class="perfil" onclick="entrarPerfil()">
+        <div class="avatar-perfil" style="background: linear-gradient(135deg, #2ecc71, #145a32);">M</div>
+        <span>Vida</span>
+      </div>
+      <div class="perfil" onclick="entrarPerfil()">
+        <div class="avatar-perfil" style="background: linear-gradient(135deg, #9b59b6, #512e5f);">O</div>
+        <span>Kayki</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TELA PRINCIPAL (ESTILO NETFLIX INTERFACE) -->
+  <main id="conteudo-netflix" class="escondido">
+    <header class="navbar-netflix">
+      <div class="logo-txt">NETFLIX <span class="sub-logo">F&K</span></div>
+      <div class="perfil-ativo">🎬 Fernanda & Kayki</div>
+    </header>
+
+    <!-- DESTAQUE PRINCIPAL -->
+    <section id="banner-principal" class="banner-principal">
+      <div class="conteudo-banner">
+        <span class="tag-original">ORIGINAL DE NÓS DOIS</span>
+        <h1>NOSSA HISTÓRIA ❤️</h1>
+        <p class="meta-info"><span>Seis temporadas</span> • <span>Uma história</span> • <span class="temporadas">Dois protagonistas</span></p>
+        <p class="descricao-banner">
+          Uma história de amor que começou com uma mensagem, e se tornou um laço para a vida toda.
+        </p>
+        <div class="botoes-acao">
+          <button class="btn-play" onclick="abrirModalInformacoes()">▶ Assistir</button>
+          <button class="btn-info" onclick="abrirModalInformacoes()">ℹ Mais Informações</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADE ORGANIZADA DE TEMPORADAS -->
+    <section class="secao-temporadas">
+      <div class="grid-temporadas">
+        
+        <!-- TEMPORADA 1 -->
+        <div class="card-temporada">
+          <img id="img-temp1" src="" alt="Temporada 1">
+          <div class="conteudo-card">
+            <span class="tag-temp">TEMPORADA 1</span>
+            <h3>Antes de Tudo Começar</h3>
+            <div class="rodape-card">
+              <span>📺 6 Episódios</span>
+              <button class="btn-ver-temp" onclick="abrirModalListaTemp(1)">▶ Ver Temporada</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEMPORADA 2 -->
+        <div class="card-temporada">
+          <img id="img-temp2" src="" alt="Temporada 2">
+          <div class="conteudo-card">
+            <span class="tag-temp">TEMPORADA 2</span>
+            <h3>O Dia em que nos Escolhemos</h3>
+            <div class="rodape-card">
+              <span>📺 6 Episódios</span>
+              <button class="btn-ver-temp" onclick="abrirModalListaTemp(2)">▶ Ver Temporada</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEMPORADA 3 -->
+        <div class="card-temporada">
+          <img id="img-temp3" src="" alt="Temporada 3">
+          <div class="conteudo-card">
+            <span class="tag-temp">TEMPORADA 3</span>
+            <h3>Quando Duas Histórias se Tornam Uma</h3>
+            <div class="rodape-card">
+              <span>📺 6 Episódios</span>
+              <button class="btn-ver-temp" onclick="abrirModalListaTemp(3)">▶ Ver Temporada</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEMPORADA 4 -->
+        <div class="card-temporada">
+          <img id="img-temp4" src="" alt="Temporada 4">
+          <div class="conteudo-card">
+            <span class="tag-temp">TEMPORADA 4</span>
+            <h3>Lugares que Viraram Memórias</h3>
+            <div class="rodape-card">
+              <span>📺 6 Episódios</span>
+              <button class="btn-ver-temp" onclick="abrirModalListaTemp(4)">▶ Ver Temporada</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEMPORADA 5 -->
+        <div class="card-temporada">
+          <img id="img-temp5" src="" alt="Temporada 5">
+          <div class="conteudo-card">
+            <span class="tag-temp">TEMPORADA 5</span>
+            <h3>Fé, Maturidade e Recomeços</h3>
+            <div class="rodape-card">
+              <span>📺 6 Episódios</span>
+              <button class="btn-ver-temp" onclick="abrirModalListaTemp(5)">▶ Ver Temporada</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TEMPORADA 6 -->
+        <div class="card-temporada">
+          <img id="img-temp6" src="" alt="Temporada 6">
+          <div class="conteudo-card">
+            <span class="tag-temp">TEMPORADA 6</span>
+            <h3>A Pessoa Certa e o Futuro que Nos Espera</h3>
+            <div class="rodape-card">
+              <span>📺 6 Episódios</span>
+              <button class="btn-ver-temp" onclick="abrirModalListaTemp(6)">▶ Ver Temporada</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL DE ESTREIA (MAIS INFORMAÇÕES) -->
+  <div id="modal-informacoes" class="modal-overlay escondido">
+    <div class="modal-conteudo">
+      <button class="btn-fechar" onclick="fecharModais()">✕</button>
+      <h2>ESTREIA ❤️</h2>
+      <p>
+        Existem histórias que começam por acaso, outras que parecem ter sido escritas pelo destino. A nossa começou quando dois jovens, ainda com apenas 13 anos, tiveram seus caminhos cruzados.<br><br>
+        Entre desconfianças, incertezas e a curiosidade de conhecer alguém que, até então, fazia parte apenas de uma tela, nasceu uma história que nenhum dos dois imaginava onde poderia chegar.<br><br>
+        Foram necessárias algumas tentativas, encontros e coragem para transformar aquela aproximação em algo verdadeiro. Primeiro, em 11 de setembro de 2020, começou oficialmente o nosso vínculo de namoro, uma data que marcou o início de uma nova etapa em nossas vidas. Depois, em 6 de novembro de 2020, aconteceu nosso primeiro encontro pessoalmente.<br><br>
+        Mas foi em 4 de abril de 2021 que algo ainda mais especial aconteceu: nossos laços ganharam um novo significado, quando o jovem tomou a iniciativa de conversar com seus pais, que foram até a casa da garota. Aquele momento representou muito mais do que uma visita. Foi o início de uma ligação ainda mais próxima entre nossas vidas e famílias.<br><br>
+        Três datas, três momentos especiais e uma única história: a nossa.<br><br>
+        E se até aqui já vivemos tantas coisas, imagine tudo o que ainda está por vir. Esta é apenas a estreia de uma história que merece muitas temporadas, episódios e, acima de tudo, um final que nunca precise chegar.
+      </p>
+      <div class="rodape-modal">
+        <span>Elenco Principal: Fernanda & Kayki • Direção: O Destino ✨</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DA LISTA DE EPISÓDIOS DA TEMPORADA -->
+  <div id="modal-lista-temp" class="modal-overlay escondido">
+    <div class="modal-conteudo">
+      <button class="btn-fechar" onclick="fecharModais()">✕</button>
+      <h2 id="titulo-modal-temp">Temporada X</h2>
+      <div id="container-lista-eps" class="lista-episodios-modal"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

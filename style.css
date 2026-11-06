@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #141414;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+.escondido {
+  display: none !important;
+}
+
+/* INTRODUÇÃO NETFLIX */
+.intro-netflix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: pointer;
+  transition: opacity 1s ease;
+}
+
+.netflix-logo-anim {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: zoomLogo 2.5s ease-in-out infinite alternate;
+}
+
+.letra-m {
+  font-size: 8rem;
+  font-weight: 700;
+  color: #e50914;
+  letter-spacing: -5px;
+  text-shadow: 0 0 20px rgba(229, 9, 20, 0.8);
+  font-family: 'Arial Black', sans-serif;
+}
+
+.clique-para-entrar {
+  margin-top: 30px;
+  color: #888;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  animation: piscar 1.5s infinite;
+}
+
+@keyframes piscar {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+
+@keyframes zoomLogo {
+  0% { transform: scale(0.95); }
+  100% { transform: scale(1.05); }
+}
+
+/* PERFIS */
+.tela-perfis {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #141414;
+  padding: 20px;
+}
+
+.tela-perfis h1 {
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container-perfis {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.perfil {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.perfil:hover {
+  transform: scale(1.08);
+}
+
+.avatar-perfil {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+  border: 3px solid transparent;
+}
+
+.perfil:hover .avatar-perfil {
+  border-color: #fff;
+}
+
+.perfil span {
+  color: #888;
+  font-size: 1rem;
+}
+
+/* NAVBAR */
+.navbar-netflix {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+  z-index: 10;
+}
+
+.logo-txt {
+  color: #e50914;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.sub-logo {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.perfil-ativo {
+  font-size: 0.85rem;
+  color: #ddd;
+}
+
+/* BANNER PRINCIPAL */
+.banner-principal {
+  height: 65vh;
+  background-color: #141414;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 20px 40px 20px;
+  position: relative;
+}
+
+/* Gradiente escuro para mesclar o banner com o fundo do site */
+.banner-principal::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, #141414 10%, transparent 100%);
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .banner-principal {
+    height: 70vh;
+    padding: 0 50px 50px 50px;
+  }
+}
+
+.conteudo-banner {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.tag-original {
+  background-color: #e50914;
+  color: white;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 3px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.banner-principal h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+@media (min-width: 768px) {
+  .banner-principal h1 { font-size: 3rem; }
+}
+
+.meta-info {
+  font-size: 0.85rem;
+  color: #46d369;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.meta-info span {
+  color: #ccc;
+  font-weight: 400;
+  margin-right: 8px;
+}
+
+.descricao-banner {
+  font-size: 0.9rem;
+  color: #ddd;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-play, .btn-info {
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: 0.2s;
+}
+
+.btn-play { background-color: #fff; color: #000; }
+.btn-play:hover { background-color: rgba(255,255,255,0.75); }
+.btn-info { background-color: rgba(109, 109, 110, 0.7); color: white; }
+.btn-info:hover { background-color: rgba(109, 109, 110, 0.4); }
+
+/* GRID DE TEMPORADAS */
+.secao-temporadas {
+  padding: 30px 20px 60px 20px;
+}
+
+@media (min-width: 768px) {
+  .secao-temporadas { padding: 40px 50px 80px 50px; }
+}
+
+.grid-temporadas {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .grid-temporadas { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+  .grid-temporadas { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card-temporada {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-temporada:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(229, 9, 20, 0.3);
+}
+
+.card-temporada img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.conteudo-card {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.tag-temp {
+  color: #e50914;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.conteudo-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.rodape-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.btn-ver-temp {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-ver-temp:hover {
+  background-color: #e50914;
+  color: #fff;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 15px;
+}
+
+.modal-conteudo {
+  background-color: #181818;
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.9);
+  border: 1px solid #333;
+}
+
+.btn-fechar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #222;
+  color: #fff;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.modal-conteudo h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #e50914;
+}
+
+.item-ep {
+  background: #222;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  border-left: 3px solid #e50914;
+}
+
+.item-ep h4 {
+  color: #fff;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.item-ep p {
+  color: #bbb;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.rodape-modal {
+  font-size: 0.8rem;
+  color: #777;
+  border-top: 1px solid #333;
+  padding-top: 12px;
+}
